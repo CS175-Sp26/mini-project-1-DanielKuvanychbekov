@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    buildFeatures { viewBinding = true; }
     namespace = "edu.sjsu.android.project1danielkuvan"
     compileSdk {
         version = release(36)
