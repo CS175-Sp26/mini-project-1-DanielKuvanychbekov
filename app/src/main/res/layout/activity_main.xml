@@ -6,23 +6,162 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+<!--no hardcoded string, alt + enter, extract string-->
 
     <TextView
+        android:id="@+id/enterPrincipleTextView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_height="18dp"
+        android:text="@string/enter_principle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-s
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.089" />
+
+    <EditText
+        android:id="@+id/principleEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:text="@string/name"
+        app:layout_constraintBottom_toBottomOf="@id/enterPrincipleTextView"
+        app:layout_constraintStart_toEndOf="@id/enterPrincipleTextView"
+        app:layout_constraintTop_toTopOf="@id/enterPrincipleTextView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <TextView
+        android:id="@+id/InterestRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="36dp"
+        android:text="@string/interest_rate"
+        app:layout_constraintStart_toStartOf="@id/enterPrincipleTextView"
+        app:layout_constraintTop_toBottomOf="@id/enterPrincipleTextView" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="400dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:max="200"
+        android:progress="50"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/InterestRate"
+        app:layout_constraintTop_toBottomOf="@id/InterestRate"
+        tools:layout_editor_absoluteY="171dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/my_widget"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/years"
+        app:layout_constraintStart_toStartOf="@+id/years"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        app:layout_constraintVertical_bias="0.655" />
+
+    <RadioGroup
+        android:id="@+id/years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/radioButton"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="@id/seekBar"
+        tools:layout_editor_absoluteY="269dp"
+        app:layout_constraintTop_toBottomOf="@id/textView3"
+        android:layout_marginTop="20dp">
+        >
+
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_15_years"
+            app:layout_constraintStart_toStartOf="@id/seekBar"
+            tools:layout_editor_absoluteY="269dp"
+            app:layout_constraintTop_toBottomOf="@id/textView3"
+
+            />
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_20_years"
+            app:layout_constraintStart_toStartOf="@+id/radioButton"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_30_years"
+            app:layout_constraintStart_toStartOf="@+id/radioButton2"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+    </RadioGroup>
+
+
+
+
+    <CheckBox
+        android:id="@+id/taxCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/include_taxes_and_insurance_0_1"
+        app:layout_constraintStart_toStartOf="@+id/years"
+        app:layout_constraintTop_toBottomOf="@+id/years" />
+
+    <Button
+        android:id="@+id/CalculateBtn"
+        style="@style/buttons"
+        android:text="@string/calculate"
+        app:layout_constraintEnd_toStartOf="@+id/DeleteBtn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/taxCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/taxCheckBox" />
+
+    <Button
+        android:id="@+id/DeleteBtn"
+        style="@style/buttons"
+        android:text="@string/uninstall"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/CalculateBtn"
+        app:layout_constraintTop_toBottomOf="@+id/taxCheckBox" />
+
+    <TextView
+        android:id="@+id/PrincipleIsValidText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:text="@string/please_enter_the_principle"
+        app:layout_constraintStart_toStartOf="@id/taxCheckBox"
+        app:layout_constraintTop_toBottomOf="@id/CalculateBtn" />
+
+    <TextView
+        android:id="@+id/CalculateResultText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/then_press_calculate_for_monthly_payments"
+        app:layout_constraintStart_toStartOf="@id/PrincipleIsValidText"
+        app:layout_constraintTop_toBottomOf="@id/PrincipleIsValidText" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,17 @@
 <resources>
     <string name="app_name">Mortgage Calculator by Daniel Kuvan</string>
+    <string name="enter_principle">Enter Principle($):</string>
+    <string name="name"></string>
+    <string name="interest_rate">Interest Rate: 5</string>
+    <string name="_15_years">15 years</string>
+    <string name="_20_years">20 years</string>
+    <string name="_30_years">30 years</string>
+    <string name="please_enter_the_principle">Please enter the principle.</string>
+    <string name="then_press_calculate_for_monthly_payments">Then press CALCULATE for monthly payments</string>
+    <string name="result_text">Monthly payment: $%.2f</string>
+    <string name="calculate">Calculate</string>
+    <string name="include_taxes_and_insurance_0_1">Include taxes and insurance (0.1%)</string>
+    <string name="uninstall">UNINSTALL</string>
     <!--  -->
+<!--    <string <>-->
 </resources>
