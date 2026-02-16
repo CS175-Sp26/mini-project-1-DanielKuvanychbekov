@@ -12,6 +12,7 @@
     <string name="calculate">Calculate</string>
     <string name="include_taxes_and_insurance_0_1">Include taxes and insurance (0.1%)</string>
     <string name="uninstall">UNINSTALL</string>
+    <string name="select_loan_term">Select loan term</string>
     <!--  -->
 <!--    <string <>-->
 </resources>
